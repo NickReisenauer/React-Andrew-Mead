@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 
-const App = ({ initialCount = 1 }) => {
-  const [count, setCount] = useState(initialCount);
+const App = (props) => {
+  const [count, setCount] = useState(props.count);
 
   return (
     <div>
@@ -13,6 +13,10 @@ const App = ({ initialCount = 1 }) => {
       <button onClick={() => setCount(0)}>Reset</button>
     </div>
   );
+};
+
+App.defaultProps = {
+  count: 0,
 };
 
 ReactDOM.render(
